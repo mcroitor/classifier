@@ -57,6 +57,18 @@ class classifier {
      * @return array
      */
     public function keys();
+
+    /**
+     * Check if key exists.
+     * @return bool
+     */
+    public function has_key(string $key): bool;
+
+    /**
+     * Get key by value. If key does not exist, returns false
+     * @return int|string|false
+     */
+    public function get_key_by_value($value): int|string|false;
 }
 ```
 
