@@ -1,21 +1,19 @@
 # Simple PHP classifier class
 
-A classifier represents named associated array. It is usefull for enumerating,
+A classifier represents named associated array. It is useful for enumerating,
 defining dictionaries or creating translations.
 
 ## Interface
 
 ```php
-namespace mc;
+namespace Mc;
 
 /**
  * Class classifier, used to load and provide access to classifier data
  * Classifier data is stored as a JSON file in the classifier directory
- * @package mc
+ * @package Mc
  */
-class classifier {
-    private $values = [];
-    private $name = "empty";
+class Classifier {
 
     public function __construct(string $name, array $values = []);
 
@@ -23,12 +21,12 @@ class classifier {
      * Static method, fabric method, creates classifier from a JSON file.
      * JSON structure: { name: "", values: [] }
      * @param string $classifier_path
-     * @return classifier
+     * @return Classifier
      */
-    public static function load(string $classifier_path);
+    public static function load(string $classifier_path): Classifier;
 
     /**
-     * returne classifier element by its key
+     * return classifier element by its key
      * @param string $id
      * @return mixed
      */
@@ -63,14 +61,16 @@ class classifier {
      * @param string $key
      * @return bool
      */
-    public function has_key(string $key): bool;
+    public function hasKey(string $key): bool;
 
     /**
      * Get key by value. If key does not exist, returns false
      * @param string $value
-     * @return int|string|false
+     * @return int if key is int
+     * @return string if key is string
+     * @return false if key does not exist
      */
-    public function get_key_by_value(string $value): int|string|false;
+    public function getKeyByValue(string $value): int|string|false;
 }
 ```
 

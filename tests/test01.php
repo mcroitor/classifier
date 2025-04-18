@@ -26,7 +26,7 @@ $classifier_name = "enumeration";
 info("test1: create a classifier");
 info("init data:", $data);
 
-$enumeration = new \mc\classifier($classifier_name, $data);
+$enumeration = new \Mc\Classifier($classifier_name, $data);
 
 info("classifier name: ", $enumeration->name());
 

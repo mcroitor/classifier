@@ -23,7 +23,7 @@ $value = "Moldova (the Republic of)";
 
 info("test2: load classifier from file");
 
-$countries = \mc\classifier::load($classifier_file);
+$countries = \Mc\Classifier::load($classifier_file);
 
 info("classifier name: ", $countries->name());
 
